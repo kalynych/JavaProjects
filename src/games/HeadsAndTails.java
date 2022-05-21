@@ -13,6 +13,11 @@ public class HeadsAndTails {
         yourGuess = scanner.next();
         scanner.close();
 
+        if (!yourGuess.equals("head") && !yourGuess.equals("tail")) {
+            System.out.println("Try again, next time enter 'head' or 'tail'.");
+            System.exit(0);
+        }
+
         if (new Random().nextInt(2) == 0 && yourGuess.equals("head")) {
             System.out.println("You won!!!");
         } else {
