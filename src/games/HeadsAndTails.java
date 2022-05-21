@@ -8,6 +8,7 @@ public class HeadsAndTails {
     public static void main(String[] args) {
 
         String yourGuess;
+        int yourGuessNumber;
         Scanner scanner = new Scanner(System.in);
         System.out.println("What's your guess: ");
         yourGuess = scanner.next();
@@ -18,7 +19,14 @@ public class HeadsAndTails {
             System.exit(0);
         }
 
-        if (new Random().nextInt(2) == 0 && yourGuess.equals("head")) {
+        if (yourGuess.equals("head")) {
+            yourGuessNumber = 0;
+        } else {
+            yourGuessNumber = 1;
+        }
+
+        int headOrTail = new Random().nextInt(2);
+        if (headOrTail == yourGuessNumber) {
             System.out.println("You won!!!");
         } else {
             System.out.println("You lost.");
